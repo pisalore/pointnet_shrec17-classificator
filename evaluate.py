@@ -36,7 +36,7 @@ if not os.path.exists(DUMP_DIR): os.mkdir(DUMP_DIR)
 LOG_FOUT = open(os.path.join(DUMP_DIR, 'log_evaluate.txt'), 'w')
 LOG_FOUT.write(str(FLAGS)+'\n')
 
-NUM_CLASSES = 15
+NUM_CLASSES = 16
 SHAPE_NAMES = [line.rstrip() for line in \
     open(os.path.join(BASE_DIR, './data/hdf5_data/shape_names.txt'))]
 
