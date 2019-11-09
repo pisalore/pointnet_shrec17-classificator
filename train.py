@@ -207,7 +207,8 @@ def train_one_epoch(sess, ops, train_writer):
             total_correct += correct
             total_seen += BATCH_SIZE
             loss_sum += loss_val
-        
+
+        print('TOTAL CORRECT: ', np.array(total_correct))
         log_string('mean loss: %f' % (loss_sum / float(num_batches)))
         log_string('accuracy: %f' % (total_correct / float(total_seen)))
 
@@ -248,12 +249,10 @@ def eval_one_epoch(sess, ops, test_writer):
                 l = current_label[i]
                 total_seen_class[l] += 1
                 total_correct_class[l] += (pred_val[i-start_idx] == l)
-            
+
+    print('TOTAL CORRECT CLASSES: ',np.array(total_correct_class))
     log_string('eval mean loss: %f' % (loss_sum / float(total_seen)))
     log_string('eval accuracy: %f'% (total_correct / float(total_seen)))
-    print('TOTAL CORRECT CLASSES: ',np.array(total_correct_class))
-    print()
-    print(np.array('TOTAL SEEN CLASSES: ',total_seen_class))
     log_string('eval avg class acc: %f' % (np.mean(np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float))))
          
 
