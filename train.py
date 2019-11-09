@@ -68,6 +68,7 @@ def log_string(out_str):
     LOG_FOUT.flush()
     print(out_str)
 
+
 def get_learning_rate(batch):
     learning_rate = tf.train.exponential_decay(
                         BASE_LEARNING_RATE,  # Base learning rate.
