@@ -18,48 +18,48 @@ for path_file in glob.glob(os.path.join(LABEL_DIR, '*.seg')):
     f = open(path_file, 'w+')
     if (class_file == 'class1'):
         for i in range(0, 2048):
-            f.write('1' + '\n')
+            f.write('0' + '\n')
     elif (class_file == 'class2'):
         for i in range(0, 2048):
-            f.write('2' + '\n')
+            f.write('1' + '\n')
     elif (class_file == 'class3'):
         for i in range(0, 2048):
-            f.write('3' + '\n')
+            f.write('2' + '\n')
     elif (class_file == 'class4'):
         for i in range(0, 2048):
-            f.write('4' + '\n')
+            f.write('3' + '\n')
     elif (class_file == 'class5'):
         for i in range(0, 2048):
-            f.write('5' + '\n')
+            f.write('4' + '\n')
     elif (class_file == 'class6'):
         for i in range(0, 2048):
-            f.write('6' + '\n')
+            f.write('5' + '\n')
     elif (class_file == 'class7'):
         for i in range(0, 2048):
-            f.write('7' + '\n')
+            f.write('6' + '\n')
     elif (class_file == 'class8'):
         for i in range(0, 2048):
-            f.write('8' + '\n')
+            f.write('7' + '\n')
     elif (class_file == 'class9'):
         for i in range(0, 2048):
-            f.write('9' + '\n')
+            f.write('8' + '\n')
     elif (class_file == 'class10'):
         for i in range(0, 2048):
-            f.write('10' + '\n')
+            f.write('9' + '\n')
     elif (class_file == 'class11'):
         for i in range(0, 2048):
-            f.write('11' + '\n')
+            f.write('10' + '\n')
     elif (class_file == 'class12'):
         for i in range(0, 2048):
-            f.write('12' + '\n')
+            f.write('11' + '\n')
     elif (class_file == 'class13'):
         for i in range(0, 2048):
-            f.write('13' + '\n')
+            f.write('12' + '\n')
     elif (class_file == 'class14'):
         for i in range(0, 2048):
-            f.write('14' + '\n')
+            f.write('13' + '\n')
     elif (class_file == 'class15'):
         for i in range(0, 2048):
-            f.write('15' + '\n')
+            f.write('14' + '\n')
 print('Label files generated.')
 
