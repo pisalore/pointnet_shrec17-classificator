@@ -92,6 +92,6 @@ def get_loss(pred, label, end_points, reg_weight=0.001):
 
 if __name__=='__main__':
     with tf.Graph().as_default():
-        inputs = tf.zeros((32,1024,3))
+        inputs = tf.zeros((32,2048,3))
         outputs = get_model(inputs, tf.constant(True))
         print(outputs)
