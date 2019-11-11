@@ -19,10 +19,13 @@ f_testing = h5py.File("./hdf5_data/data_testing.h5", 'w')
 
 a_data_training = np.zeros((len(filenames_training), 2048, 3))
 a_pid_training = np.zeros((len(filenames_training), 2048), dtype = np.uint8)
+
+labeldata_training = []
 a_label_training = np.zeros((len(filenames_training), 1), dtype = np.uint8)
 
 a_data_testing = np.zeros((len(filenames_testing), 2048, 3))
 a_pid_testing = np.zeros((len(filenames_testing), 2048), dtype = np.uint8)
+labeldata_testing = []
 a_label_testing = np.zeros((len(filenames_testing), 1), dtype = np.uint8)
 
 # ====== GENERATING TRAINING FILES ======
@@ -40,6 +43,7 @@ for i in range(0, len(filenames_training)):
 
 for i in range(0, len(filenames_training)):
     labeldata = [line.rstrip() for line in open("./label_dir/" + filenames_training[i] + ".seg", 'r')]
+    print(labeldata.__len__(), a_label_training.shape)
     a_label_training[i] = labeldata[i]
 
 data = f_training.create_dataset("data", data = a_data_training)
