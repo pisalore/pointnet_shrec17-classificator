@@ -43,8 +43,7 @@ for i in range(0, len(filenames_training)):
 
 for i in range(0, len(filenames_training)):
     labeldata = [line.rstrip() for line in open("./label_dir/" + filenames_training[i] + ".seg", 'r')]
-    print(labeldata.__len__(), a_label_training.shape)
-    a_label_training[i] = labeldata[i]
+    a_label_training[i] = labeldata[0]
 
 data = f_training.create_dataset("data", data = a_data_training)
 pid = f_training.create_dataset("pid", data = a_pid_training)
@@ -68,7 +67,7 @@ for i in range(0, len(filenames_testing)):
 
 for i in range(0, len(filenames_testing)):
     labeldata = [line.rstrip() for line in open("./label_dir/" + filenames_testing[i] + ".seg", 'r')]
-    a_label_testing[i] = labeldata[i]
+    a_label_testing[i] = labeldata[0]
 
 data = f_testing.create_dataset("data", data = a_data_testing)
 pid = f_testing.create_dataset("pid", data = a_pid_testing)
