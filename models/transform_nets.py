@@ -23,7 +23,7 @@ def input_transform_net(point_cloud, is_training, bn_decay=None, K=3):
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='tconv2', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 1024, [1,1],
+    net = tf_util.conv2d(net, 2048, [1,1],
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='tconv3', bn_decay=bn_decay)
@@ -67,7 +67,7 @@ def feature_transform_net(inputs, is_training, bn_decay=None, K=64):
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='tconv2', bn_decay=bn_decay)
-    net = tf_util.conv2d(net, 1024, [1,1],
+    net = tf_util.conv2d(net, 2048, [1,1],
                          padding='VALID', stride=[1,1],
                          bn=True, is_training=is_training,
                          scope='tconv3', bn_decay=bn_decay)
