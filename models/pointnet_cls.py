@@ -36,7 +36,7 @@ def get_model(point_cloud, is_training, bn_decay=None):
                          scope='conv2', bn_decay=bn_decay)
 
     with tf.variable_scope('transform_net2') as sc:
-        transform = feature_transform_net(net, is_training, bn_decay, K=64)
+        transform = feature_transform_net(net, is_training, bn_decay, K=128)
     end_points['transform'] = transform
     net_transformed = tf.matmul(tf.squeeze(net, axis=[2]), transform)
     net_transformed = tf.expand_dims(net_transformed, [2])
@@ -59,11 +59,11 @@ def get_model(point_cloud, is_training, bn_decay=None):
                              padding='VALID', scope='maxpool')
 
     net = tf.reshape(net, [batch_size, -1])
-    net = tf_util.fully_connected(net, 1024, bn=True, is_training=is_training,
+    net = tf_util.fully_connected(net, 512, bn=True, is_training=is_training,
                                   scope='fc1', bn_decay=bn_decay)
     net = tf_util.dropout(net, keep_prob=0.7, is_training=is_training,
                           scope='dp1')
-    net = tf_util.fully_connected(net, 512, bn=True, is_training=is_training,
+    net = tf_util.fully_connected(net, 256, bn=True, is_training=is_training,
                                   scope='fc2', bn_decay=bn_decay)
     net = tf_util.dropout(net, keep_prob=0.7, is_training=is_training,
                           scope='dp2')
